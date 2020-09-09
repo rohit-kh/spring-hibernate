@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring MVC - Student Form</title>
+</head>
+<body>
+<form action="#" th:action="@{processForm}" th:attribute="${student}" th:object="${student}">
+    First Name: <input type="text" th:field="*{firstName}" /><br><br>
+    Last Name: <input type="text" th:field="*{lastName}" /><br><br>
+    Country: <select th:field="*{country}">
+         <option th:each="key : ${student.countryOptions.keySet()}" th:value="${key}" th:text="${student.countryOptions.get(key)}"></option>
+    </select><br><br>
+    Favorite Language:
+    Java  <input type="radio" value="JAVA" th:field="*{favoriteLanguage}">
+    C#  <input type="radio" value="C#" th:field="*{favoriteLanguage}">
+    PHP  <input type="radio" value="PHP" th:field="*{favoriteLanguage}">
+    Ruby  <input type="radio" value="Ruby" th:field="*{favoriteLanguage}"><br><br>
+
+    Operating System:
+    Linux  <input type="checkbox" value="Linux" th:field="*{operatingSystems}"><br><br>
+    Mac OS  <input type="checkbox" value="Mac OS" th:field="*{operatingSystems}"><br><br>
+    MS Windows  <input type="checkbox" value="MS Windows" th:field="*{operatingSystems}"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

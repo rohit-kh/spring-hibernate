@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring MVC - Student Registration Confirmation</title>
+</head>
+<body>
+First Name: <span th:text="${student.firstName}"></span><br>
+Last Name: <span th:text="${student.lastName}"></span><br>
+Country: <span th:text="${student.country}"></span><br>
+Favorite Language: <span th:text="${student.favoriteLanguage}"></span><br>
+Operating System:
+<ul>
+     <li th:each="item : ${student.operatingSystems}" th:text="${item}"></li>
+</ul>
+<br>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring MVC - Customer Form</title>
+</head>
+<body>
+<form action="#" th:action="@{processForm}" th:attribute="${customer}" th:object="${customer}">
+    First Name: <input type="text" th:field="*{firstName}" /><br><br>
+    Last Name (*): <input type="text" th:field="*{lastName}" />
+    <span th:each="err : ${#fields.errors('lastName')}" th:text="${err}"></span>
+    <br><br>
+    Free Passes (*): <input type="text" th:field="*{freePasses}" />
+    <span th:each="err : ${#fields.errors('freePasses')}" th:text="${err}"></span><br><br>
+
+    Postal Code (*): <input type="text" th:field="*{postalCode}" />
+    <span th:each="err : ${#fields.errors('postalCode')}" th:text="${err}"></span><br><br>
+
+    Course Code (*): <input type="text" th:field="*{courseCode}" />
+    <span th:each="err : ${#fields.errors('courseCode')}" th:text="${err}"></span><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
